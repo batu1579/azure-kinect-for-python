@@ -1,0 +1,57 @@
+[tool.poetry]
+name = "azure-kinect-for-python"
+version = "0.1.0"
+description = "Provides encapsulation of the Azure Kinect SDK for easy Python development"
+keywords = ["azure", "kinect", "sdk", "python"]
+authors = ["batu1579 <51915056+batu1579@users.noreply.github.com>"]
+repository = "https://github.com/batu1579/azure-kinect-for-python"
+license = "MPL 2.0"
+readme = "README.md"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Scientific/Engineering",
+    "License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)",
+]
+
+
+[tool.poetry.dependencies]
+python = "^3.10"
+typing-extensions = "^4.10"
+opencv-python = "^4.9"
+open3d = "^0.18"
+probreg = "^0.3"
+adaptix = "^3.0.0b3"
+pykinect-azure = { git = "https://github.com/ibaiGorordo/pyKinectAzure.git" }
+simple-singleton = { git = "https://github.com/batu1579/simple-singleton.git" }
+cupy-cuda12x = "^13.0.0"
+scikit-learn = "^1.4.2"
+
+[tool.poetry.group.rich-logging]
+optional = true
+
+[tool.poetry.group.rich-logging.dependencies]
+loguru = "^0.7"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0"
+pytest-cov = "^4.1"
+pytest-html = "^4.1"
+pytest-assume = "^2.4"
+pytest-ordering = "^0.6"
+pytest-dependency = "^0.6"
+viztracer = "^0.16.2"
+line-profiler = "^4.1.2"
+
+[[tool.poetry.source]]
+name = "aliyun"
+url = "https://mirrors.aliyun.com/pypi/simple/"
+priority = "primary"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
